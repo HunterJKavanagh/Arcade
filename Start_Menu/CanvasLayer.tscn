@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tetris/fonts/main.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Start_Menu/StartGame.gd" type="Script" id=3]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+offset = Vector2( -135, 0 )
+transform = Transform2D( 1, 0, 0, 1, -135, 0 )
+script = ExtResource( 3 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 3.0
+margin_top = -12.0
+margin_right = 1284.0
+margin_bottom = 810.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1274.0
+margin_bottom = 815.0
+custom_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+margin_top = 20.0
+margin_right = 1267.0
+margin_bottom = 808.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 1267.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Arcade 470"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer"]
+margin_top = 20.0
+margin_right = 1267.0
+margin_bottom = 808.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/CenterContainer"]
+margin_left = 565.0
+margin_top = 324.0
+margin_right = 702.0
+margin_bottom = 464.0
+
+[node name="BlackJack" type="Button" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
+margin_right = 137.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Black Jack"
+
+[node name="Tetris" type="Button" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 137.0
+margin_bottom = 68.0
+custom_fonts/font = ExtResource( 1 )
+text = "Tetris"
+
+[node name="2048" type="Button" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 137.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 1 )
+text = "2048"
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 108.0
+margin_right = 137.0
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/BlackJack" to="." method="_on_BlackJack_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/Tetris" to="." method="_on_Tetris_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/2048" to="." method="_on_2048_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
