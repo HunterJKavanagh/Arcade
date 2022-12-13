@@ -49,6 +49,7 @@ margin_left = 984.0
 margin_right = 1024.0
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
+visible = true
 
 [connection signal="pressed" from="UI/Center/BetControll/plus" to="." method="_on_plus_pressed"]
 [connection signal="pressed" from="UI/Center/BetControll/minus" to="." method="_on_minus_pressed"]
